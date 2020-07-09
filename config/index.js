@@ -30,7 +30,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       "/proxy/": {//以/proxy/为开头的适合这个规则
-        target: "http://qualitysystem.oupeng.com",//目标地址
+        target: "http://172.16.10.199:8080",//目标地址
         "secure": false,//false为http访问，true为https访问
         "changeOrigin": true,//跨域访问设置，true代表跨域
         "pathRewrite": {//路径改写规则
