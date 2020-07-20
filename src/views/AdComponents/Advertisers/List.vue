@@ -21,7 +21,7 @@
           <el-input v-model="addAdvertiserForm.title" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="商务" label-width="100px">
-          <el-input v-model="addAdvertiserForm.contacterName" autocomplete="off"></el-input>
+          <el-input v-model="addAdvertiserForm.businessmanName" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -39,7 +39,7 @@
           <el-input v-model="editAdvertiserForm.title" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="商务" label-width="100px">
-          <el-input v-model="editAdvertiserForm.contacterName" autocomplete="off"></el-input>
+          <el-input v-model="editAdvertiserForm.businessmanName" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -55,8 +55,8 @@
       <el-form>
         <el-form-item label="状态" label-width="100px">
           <el-radio-group v-model="updateAdvertiseStatus.status" size="mini">
-            <el-radio label="1" border>启用</el-radio>
-            <el-radio label="2" border>禁用</el-radio>
+            <el-radio :label="1" border>启用</el-radio>
+            <el-radio :label="2" border>禁用</el-radio>
           </el-radio-group>
         </el-form-item>
       </el-form>
@@ -72,7 +72,7 @@
     <el-table border :data="advertiserList" highlight-current-row v-loading="advertiserListLoading">
       <el-table-column align="center" prop="title" label="名称"></el-table-column>
       <!-- <el-table-column align="center" prop="ch" label="广告数量"></el-table-column> -->
-      <el-table-column align="center" prop="contacterName" label="商务"></el-table-column>
+      <el-table-column align="center" prop="businessmanName" label="商务"></el-table-column>
       <el-table-column align="center" prop="status" label="状态">
         <template slot-scope="scope">
           <el-tag :type="scope.row.status === 1 ? 'success' : 'danger'">{{scope.row.status == 1 ? "启用" : "禁用"}}</el-tag>
@@ -115,7 +115,7 @@ export default {
       total: 0,
       advertiserList : [],
       addAdvertiserForm: {//创广告组创建from
-        contacterName: '',
+        businessmanName: '',
         contacterPhone: 0,
         title: ''
       },
@@ -142,7 +142,7 @@ export default {
             message: '广告主创建成功',
             type: 'success'
           });
-          this.addAdvertiserForm.contacterName = '';
+          this.addAdvertiserForm.businessmanName = '';
           this.addAdvertiserForm.title = '';
           this.createAdVertisersVisible = false;
           this.getPageAdvertiser();
@@ -210,7 +210,7 @@ export default {
       });
     },
     removeAdvertiserDropdpwn(row) {
-      this.$confirm(`此操作将永久删除该广告组, 是否继续?`, `${row.title}`, {
+        this.$confirm(`此操作将永久删除该广告主, 是否继续?`, `${row.title}`, {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
