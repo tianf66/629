@@ -4,7 +4,7 @@
     <el-col :span="24" class="toolbar">
       <el-form class="el-form" :inline="true" :model="filters">
         <el-form-item>
-          <el-button @click="createAdvertiser">创建广告</el-button>
+          <el-button @click="createAdvertiser">创建广告位</el-button>
         </el-form-item>
         <!-- <el-form-item>
           <el-input placeholder="请输入关键字查询" v-model="filters.keyWord" clearable></el-input>

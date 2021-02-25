@@ -5,6 +5,7 @@ import Home from './views/Home.vue'
 import WelcomePage from './views/User/WelcomePage.vue';
 import AdvertisersList from './views/AdComponents/Advertisers/List.vue';
 import AdList from './views/AdComponents/AdList/List.vue';
+import AdBitList from './views/AdComponents/AdBitList/List.vue';
 import MediaList from './views/MediaSystem/MediaList.vue';
 import MediaOwner from './views/MediaSystem/MediaOwner.vue';
 import AdaptationType from './views/Seting/AdaptationType.vue';
@@ -40,6 +41,7 @@ let routes = [
         iconCls: 'menu-icon ali-iconfont iconCONTACTFORM',
         children: [
             { path: '/adlist/list', iconCls: 'menu-icon ali-iconfont icondaily-report', component: AdList, name: '广告列表' },
+            { path: '/adbit/list', iconCls: 'menu-icon ali-iconfont iconziyuanldpi', component: AdBitList, name: '广告位列表' },
             { path: '/advertisers/list', iconCls: 'menu-icon ali-iconfont iconziyuan', component: AdvertisersList, name: '广告主列表' }
         ]
     },
